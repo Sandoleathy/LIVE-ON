@@ -6,9 +6,10 @@
 public class Main {
 
     public static void main(String[] args) {
-        HBSThread hbsThread = new HBSThread();
+        HeartBeatSystem hbs = new HeartBeatSystem();
+        HBSThread hbsThread = new HBSThread(hbs);
         Thread thread = new Thread(hbsThread);
         thread.start();
-        HeartBeatSystem hbs = new HeartBeatSystem();
+        hbs.useDrag(new Adrenaline(1000000));
     }
 }
