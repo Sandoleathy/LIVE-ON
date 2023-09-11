@@ -1,13 +1,12 @@
 /**
  * This code is a DEMO for HeartBeatSystem
- * Which is an idea that come out from Sandoleathy
+ * Which is an idea that comes out from Sandoleathy
  * Date: 2023/9/11
  */
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
-import java.util.Stack;
 
 public class HeartBeatSystem {
     private HeartBeatStatus bodyState;
@@ -49,7 +48,7 @@ public class HeartBeatSystem {
      * Make sure body's heartbeat will randomly float
      */
     public void randomChangeHeartBeat(){
-        if(changeQueue.size() < 3){
+        if(changeQueue.size() <= 3){
             Random random = new Random();
             if(bodyState == HeartBeatStatus.RESTING){
                 if(heartBeatRate > 80){
@@ -100,6 +99,7 @@ public class HeartBeatSystem {
      * also check BPM and update body state
      */
     public void updateHeartBeat(){
+        System.out.println("update heart beat");
         if(changeQueue.isEmpty()){
             return;
         }
