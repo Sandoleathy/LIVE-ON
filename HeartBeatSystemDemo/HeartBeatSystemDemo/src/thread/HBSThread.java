@@ -1,5 +1,8 @@
+package thread;
+
+import models.HeartBeatSystem;
+
 import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * 使用继承Runnable接口的方法创建多线程

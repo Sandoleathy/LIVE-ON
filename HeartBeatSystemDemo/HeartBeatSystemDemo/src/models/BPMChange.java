@@ -1,3 +1,5 @@
+package models;
+
 public class BPMChange {
     private int upLimit = HeartBeatSystem.DEAD_LINE_HIGHEST;
     private int downLimit = HeartBeatSystem.DEAD_LINE_LOWEST;

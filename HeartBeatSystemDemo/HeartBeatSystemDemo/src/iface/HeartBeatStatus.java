@@ -1,3 +1,5 @@
+package iface;
+
 public enum HeartBeatStatus {
     /*
     resting state(60~80)

@@ -1,4 +1,9 @@
-public class Adrenaline implements Drags{
+package models;
+
+import iface.DragType;
+import iface.Drags;
+
+public class Adrenaline implements Drags {
     public static final DragType type = DragType.ADRENALINE;
     private int duration;
     public Adrenaline(int duration){

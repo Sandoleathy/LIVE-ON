@@ -1,5 +1,5 @@
-/**
- * This code is a DEMO for HeartBeatSystem
+package models; /**
+ * This code is a DEMO for Models.HeartBeatSystem
  * Which is an idea that comes out from Sandoleathy
  * Date: 2023/9/11
  */
@@ -7,6 +7,7 @@
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
+import iface.*;
 
 public class HeartBeatSystem {
     private HeartBeatStatus bodyState;
