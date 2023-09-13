@@ -1,5 +1,6 @@
 import models.Adrenaline;
 import models.HeartBeatSystem;
+import thread.DragThread;
 import thread.HBSThread;
 
 /**
@@ -12,8 +13,7 @@ public class Main {
     public static void main(String[] args) {
         HeartBeatSystem hbs = new HeartBeatSystem();
         HBSThread hbsThread = new HBSThread(hbs);
-        Thread thread = new Thread(hbsThread);
-        thread.start();
-        hbs.useDrag(new Adrenaline(100000));
+        new Thread(hbsThread).start();
+        hbs.useDrag(new Adrenaline(20000));
     }
 }

@@ -19,6 +19,8 @@ public class HBSThread implements Runnable{
     public void run() {
         timer.schedule(new TimerTask(),0 , 2000);
     }
+
+
     private class TimerTask extends java.util.TimerTask{//一个内部类，继承了TimerTask用于给Timer的周期任务方法使用
         private HeartBeatSystem hbs = HBSThread.this.hbs;//这里的hbs同样继承自主线程，因为游戏心中只有一个太阳
 

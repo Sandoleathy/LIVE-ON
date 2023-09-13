@@ -8,12 +8,14 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
 import iface.*;
+import thread.DragThread;
 
 public class HeartBeatSystem {
     private HeartBeatStatus bodyState;
     private int heartBeatRate;
     private Queue<BPMChange> changeQueue;
     private LinkedList<Drags> dragList;
+    private DragThread thread = null;
     public final static int DEAD_LINE_HIGHEST = 220;
     public final static int DEAD_LINE_LOWEST = 45;
     public HeartBeatSystem(){
@@ -80,6 +82,9 @@ public class HeartBeatSystem {
             }
         }
     }
+    /**
+     * 还是用一个列表存储所有药品比较方便捏
+     */
     public void useDrag(Drags drag){
         dragList.add(drag);
         if(drag.getType() == DragType.ADRENALINE){//using adrenaline
@@ -92,6 +97,11 @@ public class HeartBeatSystem {
             changeQueue.offer(new BPMChange(500,0,-25));
             changeQueue.offer(new BPMChange(500,0,-25));
         }
+        if(thread != null){
+            return;
+        }
+        thread = new DragThread(this);
+        new Thread(thread).start();
     }
 
     /**
@@ -121,6 +131,9 @@ public class HeartBeatSystem {
     private void changeBodyState(HeartBeatStatus type){
         bodyState = type;
     }
+    public LinkedList<Drags> getDragList(){
+        return dragList;
+    }
     public int getHeartBeatRate(){
         return heartBeatRate;
     }
@@ -129,6 +142,10 @@ public class HeartBeatSystem {
     }
     public HeartBeatStatus getBodyState(){
         return bodyState;
+    }
+    public void removeDrag(Drags drag){
+        System.out.println("remove drag");
+        dragList.remove(drag);
     }
 
 }
