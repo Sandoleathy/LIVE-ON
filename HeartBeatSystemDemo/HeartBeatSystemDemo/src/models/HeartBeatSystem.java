@@ -13,8 +13,8 @@ import thread.DragThread;
 public class HeartBeatSystem {
     private HeartBeatStatus bodyState;
     private int heartBeatRate;
-    private Queue<BPMChange> changeQueue;
-    private LinkedList<Drags> dragList;
+    private final Queue<BPMChange> changeQueue;
+    private final LinkedList<Drags> dragList;
     private DragThread thread = null;
     public final static int DEAD_LINE_HIGHEST = 220;
     public final static int DEAD_LINE_LOWEST = 45;
@@ -55,29 +55,29 @@ public class HeartBeatSystem {
             Random random = new Random();
             if(bodyState == HeartBeatStatus.RESTING){
                 if(heartBeatRate > 80){
-                    changeQueue.offer(new BPMChange(500,0,-(random.nextInt(10))));
+                    offerChangeQueue( new BPMChange(500,0,-(random.nextInt(10))) );
                 }else if(heartBeatRate < 60){
-                    changeQueue.offer(new BPMChange(500,0,random.nextInt(10)));
+                    offerChangeQueue( new BPMChange(500,0,random.nextInt(10)) );
                 }else{
-                    changeQueue.offer(new BPMChange(500,0, (random.nextInt(10)) - 5 ));
+                    offerChangeQueue( new BPMChange(500,0, (random.nextInt(10)) - 5 ) );
                 }
             }
             else if(bodyState == HeartBeatStatus.RAGE){
                 if(heartBeatRate > 160){
-                    changeQueue.offer(new BPMChange(500,0,-(random.nextInt(10))));
+                    offerChangeQueue( new BPMChange(500,0,-(random.nextInt(10))) );
                 }else if(heartBeatRate < 130){
-                    changeQueue.offer(new BPMChange(500,0,random.nextInt(10)));
+                    offerChangeQueue( new BPMChange(500,0,random.nextInt(10)) );
                 }else{
-                    changeQueue.offer(new BPMChange(500,0, (random.nextInt(10)) - 5 ));
+                    offerChangeQueue( new BPMChange(500,0, (random.nextInt(10)) - 5 ) );
                 }
             }
             else if(bodyState == HeartBeatStatus.NERVOUS){
                 if(heartBeatRate > 110){
-                    changeQueue.offer(new BPMChange(500,0,-(random.nextInt(10))));
+                    offerChangeQueue( new BPMChange(500,0,-(random.nextInt(10))) );
                 }else if(heartBeatRate < 80){
-                    changeQueue.offer(new BPMChange(500,0,random.nextInt(10)));
+                    offerChangeQueue( new BPMChange(500,0,random.nextInt(10)) );
                 }else{
-                    changeQueue.offer(new BPMChange(500,0, (random.nextInt(10)) - 5 ));
+                    offerChangeQueue( new BPMChange(500,0, (random.nextInt(10)) - 5 ) );
                 }
             }
         }
@@ -89,13 +89,13 @@ public class HeartBeatSystem {
         dragList.add(drag);
         if(drag.getType() == DragType.ADRENALINE){//using adrenaline
             changeBodyState(HeartBeatStatus.RAGE);
-            changeQueue.offer(new BPMChange(500,0,25));
-            changeQueue.offer(new BPMChange(500,0,25));
+            offerChangeQueue(new BPMChange(500,0,25));
+            offerChangeQueue(new BPMChange(500,0,25));
         }
         else if(drag.getType() == DragType.TRANQUILIZER){//use tranquilizer
             changeBodyState(HeartBeatStatus.RESTING);
-            changeQueue.offer(new BPMChange(500,0,-25));
-            changeQueue.offer(new BPMChange(500,0,-25));
+            offerChangeQueue(new BPMChange(500,0,-25));
+            offerChangeQueue(new BPMChange(500,0,-25));
         }
         if(thread != null){
             return;
@@ -128,6 +128,16 @@ public class HeartBeatSystem {
             bodyState = HeartBeatStatus.RAGE;
         }
     }
+
+    /**\
+     * 使用同步代码块，防止在未来有频繁操作时出现丢失心率变化等问题
+     * @param change BPMChange对象，用于表示心率变化以及上下限
+     */
+    private void offerChangeQueue(BPMChange change){
+        synchronized (this.changeQueue){
+            changeQueue.offer(change);
+        }
+    }
     private void changeBodyState(HeartBeatStatus type){
         bodyState = type;
     }
@@ -146,6 +156,9 @@ public class HeartBeatSystem {
     public void removeDrag(Drags drag){
         System.out.println("remove drag");
         dragList.remove(drag);
+    }
+    public void resetHeartBeatRate(){
+        heartBeatRate = 60;
     }
 
 }

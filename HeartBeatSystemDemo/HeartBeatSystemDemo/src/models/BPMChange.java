@@ -18,4 +18,8 @@ public class BPMChange {
     public int getBPMChange(){
         return changeValue;
     }
+    @Override
+    public String toString(){
+        return downLimit + "-" + upLimit + " " + changeValue;
+    }
 }

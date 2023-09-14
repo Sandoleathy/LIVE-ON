@@ -10,7 +10,7 @@ import thread.HBSThread;
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         HeartBeatSystem hbs = new HeartBeatSystem();
         HBSThread hbsThread = new HBSThread(hbs);
         new Thread(hbsThread).start();
