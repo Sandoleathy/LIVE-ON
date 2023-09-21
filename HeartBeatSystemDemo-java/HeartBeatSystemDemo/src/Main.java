@@ -14,6 +14,7 @@ public class Main {
         HeartBeatSystem hbs = new HeartBeatSystem();
         HBSThread hbsThread = new HBSThread(hbs);
         new Thread(hbsThread).start();
+        Thread.sleep(20000);
         hbs.useDrag(new Adrenaline(20000));
     }
 }
