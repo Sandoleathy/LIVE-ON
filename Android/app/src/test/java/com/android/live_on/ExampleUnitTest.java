@@ -1,4 +1,4 @@
-package andorid.live_on;
+package com.android.live_on;
 
 import org.junit.Test;
 

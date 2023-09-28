@@ -1,4 +1,4 @@
-package andorid.live_on;
+package com.android.live_on;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("andorid.live_on", appContext.getPackageName());
+        assertEquals("com.android.live_on", appContext.getPackageName());
     }
 }

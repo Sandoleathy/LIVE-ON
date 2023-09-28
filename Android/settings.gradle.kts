@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "LIVE-ON"
 include(":app")
+ 
