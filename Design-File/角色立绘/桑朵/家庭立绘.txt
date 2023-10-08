@@ -1,0 +1,7 @@
+best quality,ultra detailed,masterpiece,highres,4k,game CG,anime,(body front),(Full body image),modern kitchen,white background,Concise background,(Female),height 165cm,scientist,beautiful,gentle,smiling,White apron,House shoes,green eyes,(B cup bust),(solo),(blond hair:1.2),White gloves,Black T-shirt,Young maiden,(Empty hands:1.2),single braid,Determined eyes,Highly educated,eyeshadow,(detailed eyes:1.1),long hair,Blue strap on left wrist,Light blue pendant in right ear,left hand  on chest,Narrow shoulders,gentle big sister,stand,
+
+worst quality,low quality,badhandv4,EasyNegative,By bad artist,FastNegativeV2,wrong proportions,extra fingers,mutated hands,poorly drawn hands,poorly drawn face,mutation,deformed,blurry,dehydrated,bad anatomy,bad proportions,extra limbs,cloned face,disfigured,gross proportions,malformed limbs,missing arms,missing legs,extra arms,extra legs,fused fingers,too many fingers,long neck,username,watermark,Cheongsam,Fat body,Weird smiling face,Huge breasts
+
+DPM++3M SDE Karras
+
+anything-v5
