@@ -1,0 +1,5 @@
+best quality,ultra detailed,masterpiece,highres,4k,game CG,anime,(body front),(full portrait image),pure white background,(solo male),age 31,scientist,blond hair,very short hair,brown eyes,wear T-shirt,High nose,A light yellow jacket on the outside and a black hoodie without a hat on the inside,Typical Italian face,high level of detail,
+
+worst quality,low quality,badhandv4,EasyNegative,By bad artist,FastNegativeV2,wrong proportions,extra fingers,mutated hands,poorly drawn hands,poorly drawn face,mutation,deformed,blurry,dehydrated,bad anatomy,bad proportions,extra limbs,cloned face,disfigured,gross proportions,malformed limbs,missing arms,missing legs,extra arms,extra legs,fused fingers,too many fingers,long neck,username,watermark,Cheongsam,Fat body,Weird smiling face,
+
+DPM++2M Karras

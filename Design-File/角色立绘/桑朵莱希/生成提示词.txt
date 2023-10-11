@@ -1,0 +1,5 @@
+best quality,ultra detailed,masterpiece,highres,4k,game CG,anime,(body front),(upper body image),(empty background),Concise background,(1girl,),height 165cm,scientist,beautiful,gentle,Light blue glowing and mechanical eyes,(blond hair:1.3),Young maiden,Determined eyes,eyeshadow,(detailed eyes:1.1),long hair,Narrow shoulders,gentle big sister,stand,blond hair,mechanical_arms,prosthesis,
+
+worst quality,low quality,badhandv4,EasyNegative,By bad artist,FastNegativeV2,wrong proportions,extra fingers,mutated hands,poorly drawn hands,poorly drawn face,mutation,deformed,blurry,dehydrated,bad anatomy,bad proportions,extra limbs,cloned face,disfigured,gross proportions,malformed limbs,missing arms,missing legs,extra arms,extra legs,fused fingers,too many fingers,long neck,username,watermark,Cheongsam,Fat body,Weird smiling face,Huge breasts,any protrusion on shoulder,armor on body,
+
+DPM++3M SDE Karras
